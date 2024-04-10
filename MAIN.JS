@@ -1,10 +1,10 @@
 const botoes = document.querySelectorA11(".botao");
 const texto = document.querySelectorAll("aba-conteudo");
 
-for(let i=0;i <botoes.lenght;i++){
-    botoes[i].onclick = function(){
+for (let i = 0; i < botoes.lenght; i++) {
+    botoes[i].onclick = function () {
 
-        for(let j=0;j<botoes.lenght;j++){
+        for(let j = 0; j < botoes.lenght; j++) {
             botoes[j].classList.remove("ativo");
             textos[j].classList.remove("ativo")
         }
@@ -13,6 +13,7 @@ for(let i=0;i <botoes.lenght;i++){
         texto[i].classList.add("ativo")
     }
  }
+
  const contadores = document.querySelectorAll(".contador");
  const tempoObjetivo1 = new Date("2020-10-05T00:00:00");
  const tempoObjetivo2 = new Date("2023-12-05T00:00:00");
@@ -34,9 +35,18 @@ for(let i=0;i <botoes.lenght;i++){
     minutos %= 60;
     horas %= 24;
     if(tempoFinal > 0){
-        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos ";
+        return [dias,horas,minutos,segundos];
     } else{
-        return "prazo Finalizado";
+        return [0,0,0,0];
+    }
+ }
+
+ function atualizaCronometro(){
+    for (let i=0; i<contadores,length;i++){
+        Document.getElementById("dias"+i),textContent = calculaTempo(tempos{i})[0];
+        Document.getElementById("horas"+i),textContent = calculaTempo(tempos{i})[1];
+        Document.getElementById("min"+i),textContent = calculaTempo(tempos{i})[2];
+        Document.getElementById("seg"+i),textContent = calculaTempo(tempos{i})[3];
     }
  }
 
